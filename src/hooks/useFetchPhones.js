@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
-import { getPhones } from "../helpers/get";
+import { getPhones } from "../helpers/getPhones";
 
-export const useFetchPhones = (category) => {
+export const UseFetchPhones = () => {
   const [state, setState] = useState({
     data: [],
     loading: true,
   });
 
   useEffect(() => {
-    getPhones(category).then((phones) => {
+    getPhones().then(({ data }) => {
       setState({
-        data: phones,
+        data: data,
         loading: false,
       });
     });
-  }, [category]);
+  }, []);
 
   return state;
 };

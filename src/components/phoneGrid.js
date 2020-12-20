@@ -1,5 +1,8 @@
 import React from "react";
 
+// CustomHooks
+import { UseFetchPhones } from "../hooks/useFetchPhones";
+
 // Bootstrap Components
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
@@ -10,6 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 
 const phoneGrid = () => {
+  const { data, loading } = UseFetchPhones();
+
   return (
     <>
       <Jumbotron>
@@ -24,6 +29,14 @@ const phoneGrid = () => {
         </p>
       </Jumbotron>
       <div>
+        {data.map((data) => {
+          console.log(data);
+          return (
+            <div>
+              <pre key={data.id}>{JSON.stringify(data)}</pre>
+            </div>
+          );
+        })}
         <Col></Col>
       </div>
     </>
