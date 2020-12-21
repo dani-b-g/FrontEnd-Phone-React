@@ -11,13 +11,14 @@ import Col from "react-bootstrap/Col";
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
+import PhoneItem from "./phoneItem";
 
 const phoneGrid = () => {
   const { data, loading } = UseFetchPhones();
 
   return (
     <>
-      <Jumbotron>
+      <Jumbotron className="mb-0">
         <h1>PhoneList</h1>
         <p></p>
         <p>
@@ -28,16 +29,13 @@ const phoneGrid = () => {
           </Button>
         </p>
       </Jumbotron>
-      <div>
-        {data.map((data) => {
-          console.log(data);
-          return (
-            <div>
-              <pre key={data.id}>{JSON.stringify(data)}</pre>
-            </div>
-          );
-        })}
-        <Col></Col>
+      <div class="container">
+        <div class="grid-row">
+          {data.map((data) => {
+            console.log(data);
+            return <PhoneItem key={data.id} phone={data}></PhoneItem>;
+          })}
+        </div>
       </div>
     </>
   );
