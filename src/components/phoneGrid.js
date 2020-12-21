@@ -29,8 +29,8 @@ const phoneGrid = () => {
           </Button>
         </p>
       </Jumbotron>
-      <div class="container">
-        <div class="grid-row">
+      <div className="container">
+        <div className="grid-row">
           {data.map((data) => {
             console.log(data);
             return <PhoneItem key={data.id} phone={data}></PhoneItem>;
