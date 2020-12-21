@@ -15,7 +15,7 @@ const phoneItem = ({ phone }) => {
       <Card.Img
         variant="top"
         className="imgCard"
-        src={`../../assets/img/${phone.imageFileName}`}
+        src={`/assets/img/${phone.imageFileName}`}
       />
       <Card.Body>
         <Card.Title>{phone.name}</Card.Title>
