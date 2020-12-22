@@ -8,6 +8,8 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+//Routes
+
 const phoneItem = ({ phone }) => {
   // Image import
   return (
@@ -21,9 +23,12 @@ const phoneItem = ({ phone }) => {
         <Card.Title>{phone.name}</Card.Title>
         <Card.Text>{phone.description}</Card.Text>
         <Row className="p-2">
-          <Button variant="primary">Details</Button>
-          <Col className="offset-5">
-            <span className=" text-center align-middle ">{`${phone.price} €`}</span>
+          {/* /details/:id */}
+          <a href={`/details/${phone.id}`} className="btn btn-primary">
+            Details
+          </a>
+          <Col className="offset-4">
+            <span className=" text-center align-middle h4">{`${phone.price} €`}</span>
           </Col>
         </Row>
       </Card.Body>

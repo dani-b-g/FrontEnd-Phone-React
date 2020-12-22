@@ -1,16 +1,31 @@
 import "./App.css";
 import Container from "react-bootstrap/Container";
 import Header from "./components/header";
+
+// Components
+import DetailsPhone from "./components/detailsPhone";
 import PhoneGrid from "./components/phoneGrid";
+
+// Routes
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Container fluid className="p-0">
         <Header></Header>
-        <PhoneGrid></PhoneGrid>
+        <Switch>
+          <Route path="/" exact>
+            <PhoneGrid></PhoneGrid>
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/details/:id">
+            <DetailsPhone></DetailsPhone>
+          </Route>
+        </Switch>
       </Container>
-    </div>
+    </Router>
   );
 }
 

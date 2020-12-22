@@ -6,14 +6,13 @@ import { UseFetchPhones } from "../hooks/useFetchPhones";
 // Bootstrap Components
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import PhoneItem from "./phoneItem";
 
-const phoneGrid = () => {
+const PhoneGrid = () => {
   const { data, loading } = UseFetchPhones();
 
   return (
@@ -30,10 +29,26 @@ const phoneGrid = () => {
         </p>
       </Jumbotron>
       <div className="container">
+        {loading && (
+          <div className="d-flex justify-content-center mt-5">
+            <div
+              className="spinner-grow"
+              style={{ width: "5rem", height: "5rem" }}
+              role="status"
+            >
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        )}
+
         <div className="grid-row">
           {data.map((data) => {
             console.log(data);
-            return <PhoneItem key={data.id} phone={data}></PhoneItem>;
+            return (
+              <div key={data._id} className="animate__animated animate__fadeIn">
+                <PhoneItem key={data._id} phone={data}></PhoneItem>
+              </div>
+            );
           })}
         </div>
       </div>
@@ -41,4 +56,4 @@ const phoneGrid = () => {
   );
 };
 
-export default phoneGrid;
+export default PhoneGrid;

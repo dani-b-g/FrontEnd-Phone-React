@@ -1,19 +1,29 @@
 import { useEffect, useState } from "react";
 import { getPhones } from "../helpers/getPhones";
+import { getPhonesDetails } from "../helpers/getPhonesDetails";
 
-export const UseFetchPhones = () => {
+export const UseFetchPhones = (id) => {
   const [state, setState] = useState({
     data: [],
     loading: true,
   });
 
   useEffect(() => {
-    getPhones().then(({ data }) => {
-      setState({
-        data: data,
-        loading: false,
+    if (!id) {
+      getPhones().then(({ data }) => {
+        setState({
+          data: data,
+          loading: false,
+        });
       });
-    });
+    } else {
+      getPhonesDetails(id).then(({ data }) => {
+        setState({
+          data: data,
+          loading: false,
+        });
+      });
+    }
   }, []);
 
   return state;

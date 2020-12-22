@@ -44,7 +44,7 @@ node index.js
 
 To start the server in DEV/Local environment
 
-You also have the Backend uploaded [here](https://phonex-react.herokuapp.com/) to use it.
+You also have the Backend documentation (Swagger) [here](https://phonex-react.herokuapp.com/swagger) to use it.
 
 This whole project is working with a MongoDB Database
 

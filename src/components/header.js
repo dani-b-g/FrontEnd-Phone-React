@@ -5,16 +5,19 @@ import Nav from "react-bootstrap/Nav";
 // import Button from "react-bootstrap/Button";
 // import FormControl from "react-bootstrap/FormControl";
 // import Form from "react-bootstrap/Form";
+import { NavLink } from "react-router-dom";
 
-const header = () => {
+const Header = () => {
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light " expand="lg">
         <Navbar.Brand>Phone-App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <NavLink to="/" className="nav-link" activeClassName="active">
+              Home
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -22,4 +25,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;
