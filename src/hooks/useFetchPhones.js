@@ -24,7 +24,7 @@ export const UseFetchPhones = (id) => {
         });
       });
     }
-  }, []);
+  }, [id]);
 
   return state;
 };
