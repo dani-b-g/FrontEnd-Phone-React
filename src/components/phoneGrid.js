@@ -18,7 +18,7 @@ const PhoneGrid = () => {
   return (
     <>
       <Jumbotron className="mb-0">
-        <h1>PhoneList</h1>
+        <h1>Phone List</h1>
         <p></p>
         <p>
           <Button variant="primary">
