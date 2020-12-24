@@ -14,7 +14,8 @@ function DetailsPhone() {
   const { id } = useParams();
   console.log(id);
 
-  const { data, loading } = UseFetchPhones(id);
+  // NOTE: FALTA loading
+  const { data } = UseFetchPhones(id);
 
   const phone = data[0];
   console.log("datos en details", phone);

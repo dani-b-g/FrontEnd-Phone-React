@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 // Bootstrap components
 import Card from "react-bootstrap/Card";
@@ -8,7 +7,7 @@ import Col from "react-bootstrap/Col";
 
 //Routes
 
-const phoneItem = ({ phone }) => {
+const PhoneItem = ({ phone }) => {
   // Image import
   return (
     <Card className="m-1" style={{ width: "18rem" }}>
@@ -34,6 +33,4 @@ const phoneItem = ({ phone }) => {
   );
 };
 
-phoneItem.propTypes = {};
-
-export default phoneItem;
+export default PhoneItem;
