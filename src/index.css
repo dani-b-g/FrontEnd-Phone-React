@@ -28,6 +28,13 @@ body,
   max-height: 432px;
 }
 
+.card_body_custom {
+}
+
+.cards_grid {
+  min-height: 482px;
+}
+
 .container {
   max-width: 1335px !important;
   margin: 0 auto;

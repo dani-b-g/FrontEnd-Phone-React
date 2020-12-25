@@ -93,6 +93,16 @@ function DetailsPhone() {
                 <h5>{data?.ram} GB</h5>
               </Col>
             </Row>
+            <Row className="mt-3">
+              <Col className="text-left" md={{ span: 2, offset: 4 }}>
+                <h5>Description:</h5>
+              </Col>
+            </Row>
+            <Row className="mt-1">
+              <Col className="text-left" md={{ offset: 4 }}>
+                <p>{data?.description}</p>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>
