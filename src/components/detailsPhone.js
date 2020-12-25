@@ -54,7 +54,7 @@ function DetailsPhone() {
               </Col>
             </Row>
             <Row className="mt-2">
-              <Col md={{ span: 2, offset: 4 }}>
+              <Col className="text-left" md={{ span: 2, offset: 4 }}>
                 <h5>Brand:</h5>
               </Col>
               <Col md={{ span: 2, offset: 0 }}>
@@ -62,11 +62,35 @@ function DetailsPhone() {
               </Col>
             </Row>
             <Row className="mt-1">
-              <Col md={{ span: 2, offset: 4 }}>
+              <Col className="text-left" md={{ span: 2, offset: 4 }}>
                 <h5>Color:</h5>
               </Col>
               <Col md={{ span: 2, offset: 0 }}>
                 <h5>{data?.color}</h5>
+              </Col>
+            </Row>
+            <Row className="mt-1">
+              <Col className="text-left" md={{ span: 2, offset: 4 }}>
+                <h5>Screen:</h5>
+              </Col>
+              <Col md={{ span: 2, offset: 0 }}>
+                <h5>{data?.screen}</h5>
+              </Col>
+            </Row>
+            <Row className="mt-1">
+              <Col className="text-left" md={{ span: 2, offset: 4 }}>
+                <h5>Processor:</h5>
+              </Col>
+              <Col md={{ span: 3, offset: 0 }}>
+                <h5>{data?.processor}</h5>
+              </Col>
+            </Row>
+            <Row className="mt-1">
+              <Col className="text-left" md={{ span: 2, offset: 4 }}>
+                <h5>Ram:</h5>
+              </Col>
+              <Col md={{ span: 2, offset: 0 }}>
+                <h5>{data?.ram} GB</h5>
               </Col>
             </Row>
           </Col>
