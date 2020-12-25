@@ -22,7 +22,10 @@ body,
 
 .imgCard {
   max-height: 286px;
-  max-width: auto;
+  min-height: 146px;
+}
+.tumb_detailed_img {
+  max-height: 432px;
 }
 
 .container {
