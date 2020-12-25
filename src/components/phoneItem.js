@@ -5,6 +5,8 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import { Link } from "react-router-dom";
+
 //Routes
 
 const PhoneItem = ({ phone }) => {
@@ -21,9 +23,9 @@ const PhoneItem = ({ phone }) => {
         <Card.Text>{phone.description}</Card.Text>
         <Row className="p-2">
           {/* /details/:id */}
-          <a href={`/details/${phone.id}`} className="btn btn-primary">
+          <Link to={`/details/${phone.id}`} className="btn btn-primary">
             Details
-          </a>
+          </Link>
           <Col className="offset-4">
             <span className=" text-center align-middle h4">{`${phone.price} €`}</span>
           </Col>

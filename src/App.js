@@ -20,7 +20,7 @@ function App() {
           </Route>
         </Switch>
         <Switch>
-          <Route path="/details/:id">
+          <Route path="/details/:id" exact>
             <DetailsPhone></DetailsPhone>
           </Route>
         </Switch>
