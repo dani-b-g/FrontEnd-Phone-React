@@ -28,7 +28,8 @@ body,
   max-height: 432px;
 }
 
-.card_body_custom {
+.jumbotron {
+  border-radius: 0rem;
 }
 
 .cards_grid {
