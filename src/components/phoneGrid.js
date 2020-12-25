@@ -10,7 +10,10 @@ import Button from "react-bootstrap/Button";
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
+
+// Customs Compoenents
 import PhoneItem from "./phoneItem";
+import Loader from "./loader";
 
 const PhoneGrid = () => {
   const { data, loading } = UseFetchPhones();
@@ -29,17 +32,7 @@ const PhoneGrid = () => {
         </p>
       </Jumbotron>
       <div className="container">
-        {loading && (
-          <div className="d-flex justify-content-center mt-5">
-            <div
-              className="spinner-grow"
-              style={{ width: "5rem", height: "5rem" }}
-              role="status"
-            >
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>
-        )}
+        {loading && <Loader />}
 
         <div className="grid-row">
           {data.map((data) => {

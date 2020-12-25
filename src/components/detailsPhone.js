@@ -6,43 +6,68 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
 
 // CustomHooks
 import { UseFetchPhones } from "../hooks/useFetchPhones";
+
+// Customs Componenets
+import Loader from "./loader";
 
 function DetailsPhone() {
   const { id } = useParams();
   console.log(id);
 
   // NOTE: FALTA loading
-  const { data } = UseFetchPhones(id);
-
-  const phone = data[0];
-  console.log("datos en details", phone);
+  const { data: phone, loading } = UseFetchPhones(id);
+  const { data } = phone;
 
   return (
     <>
-      <Jumbotron className="mb-0">
+      <Jumbotron bg="light" className="mb-0">
         <h1>Phone Details</h1>
       </Jumbotron>
-      <Container className="mt-5">
+      <Container className="mt-2 bg-light">
+        {loading && <Loader />}
+
         <Row>
-          <Col>IMAGEN</Col>
-          <Col className="text-center">
+          <Col className="m-2">
+            <Image
+              className="tumb_detailed_img"
+              src={`/assets/img/${data?.imageFileName}`}
+              thumbnail
+            />
+          </Col>
+          <Col className="text-center m-2">
             <Row>
-              <Col>test1</Col>
+              <Col>
+                <h2 className="text-dark">{data?.name}</h2>
+              </Col>
             </Row>
-            <Row>
-              <Col>test2</Col>
-              <Col>test3</Col>
+            <Row className="mt-2">
+              <Col>
+                <h3>{data?.price.toFixed(2)} €</h3>
+                <sub>
+                  Price without VATs{" "}
+                  {(data?.price - data?.price * 0.21).toFixed(2)} €
+                </sub>
+              </Col>
             </Row>
-            <Row>
-              <Col>test2</Col>
-              <Col>test3</Col>
+            <Row className="mt-2">
+              <Col md={{ span: 2, offset: 4 }}>
+                <h5>Brand:</h5>
+              </Col>
+              <Col md={{ span: 2, offset: 0 }}>
+                <h5>{data?.manufacturer}</h5>
+              </Col>
             </Row>
-            <Row>
-              <Col>test2</Col>
-              <Col>test3</Col>
+            <Row className="mt-1">
+              <Col md={{ span: 2, offset: 4 }}>
+                <h5>Color:</h5>
+              </Col>
+              <Col md={{ span: 2, offset: 0 }}>
+                <h5>{data?.color}</h5>
+              </Col>
             </Row>
           </Col>
         </Row>

@@ -19,12 +19,11 @@ export const UseFetchPhones = (id) => {
     } else {
       getPhonesDetails(id).then(({ data }) => {
         setState({
-          data: data,
+          data: { data },
           loading: false,
         });
       });
     }
   }, [id]);
-
   return state;
 };
