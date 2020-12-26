@@ -21,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start-dev": "npm start .env.local",
+    "start-dock": "docker run -it -p 3000:3000 react-phone-web",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
