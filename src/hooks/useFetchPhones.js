@@ -8,6 +8,7 @@ export const UseFetchPhones = (id) => {
     loading: true,
   });
 
+  //if have id get details of a phone
   useEffect(() => {
     if (!id) {
       getPhones().then(({ data }) => {
