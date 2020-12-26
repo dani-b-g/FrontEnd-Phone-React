@@ -17,7 +17,6 @@ const PhoneItem = ({ phone }) => {
         variant="top"
         className="imgCard p-3"
         src={`/assets/img/${phone.imageFileName}`}
-        thumbnail
       />
       <Card.Body className="h-100 d-flex flex-column">
         <Card.Title>{phone.name}</Card.Title>

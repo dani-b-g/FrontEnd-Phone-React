@@ -2,9 +2,6 @@ import React from "react";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-// import Button from "react-bootstrap/Button";
-// import FormControl from "react-bootstrap/FormControl";
-// import Form from "react-bootstrap/Form";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
