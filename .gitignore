@@ -27,3 +27,4 @@ yarn-error.log*
 .eslintcache
 .gitignore
 debug.log
+note_dev.txt
